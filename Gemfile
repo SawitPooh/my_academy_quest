@@ -53,6 +53,9 @@ group :development, :test do
   # E2E / System Test
   gem "capybara"
   gem "selenium-webdriver", "~> 4.15"
+
+  # Coverage unit, integration test
+  gem "simplecov", require: false
 end
 
 group :development do
