@@ -62,7 +62,8 @@
                         <%= button_to quest_path(quest),
                                     method: :delete,
                                     form: { data: { turbo_stream: true } },
-                                    class: "group bg-transparent p-0 border-0" do %>
+                                    class: "group bg-transparent p-0 border-0",
+                                    data: { testid: "delete-quest-#{quest.id}" } do %>
                         <%= image_tag "delete_icon.svg", alt: "Delete",
                                         class: "w-6 h-6 group-hover:opacity-60 transition-opacity duration-100" %>
                         <% end %>
