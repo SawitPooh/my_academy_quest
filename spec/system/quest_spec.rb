@@ -14,4 +14,25 @@ RSpec.describe "Quest management", type: :system do
       end
     end
   end
+
+  describe "Check quest" do
+    context "when user toggles quest status" do
+      let(:quest_title) { "อ่านหนังสือ" }
+
+      before do
+        Quest.create!(title: quest_title, status: false)
+        visit root_path
+      end
+
+      it "checkbox true quest will have line-through" do
+        find('[data-testid^="checkbox-quest"]').click
+
+        expect(page).to have_selector("label.line-through", text: quest_title)
+      end
+
+      it "checkbox false quest will not have line-through" do
+        expect(page).to have_selector("label:not(.line-through)", text: quest_title)
+      end
+    end
+  end
 end
