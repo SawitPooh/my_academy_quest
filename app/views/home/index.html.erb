@@ -1,2 +1,17 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<section class="min-h-screen md:min-w-xl mx-auto">
+    <div class="bg-white p-8 md:p-12 rounded shadow">
+        <h1 class="text-amber-950 text-2xl font-bold mb-6 md:text-3xl">My Academy Quest</h1>
+
+        <div class="flex justify-center">
+            <%= image_tag "https://github.com/sawitpooh.png", alt: "Sawit Janpan", class: "w-20 h-20 md:w-30 md:h-30 rounded-full shadow-md mb-4" %>
+        </div>
+
+        <div class="flex justify-center">
+            <p class="text-lg mb-4 md:text-xl">Sawit Janpan</p>
+        </div>
+
+        <div class="flex justify-center">
+            <%= link_to "My Brag Document", "#", class: "button text-blue-600 underline hover:text-blue-800 block mb-6" %>
+        </div>
+    </div>
+</section>
