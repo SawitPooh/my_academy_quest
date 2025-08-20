@@ -35,4 +35,21 @@ RSpec.describe "Quest management", type: :system do
       end
     end
   end
+
+  describe "Delete quest" do
+    context "when user delete  quest" do
+    let(:quest_title) { "เรียนรู้ RSpec" }
+
+    before do
+      Quest.create!(title: quest_title, status: false)
+      visit root_path
+    end
+
+      it "allows user to delete a quest" do
+        find('[data-testid^="delete-quest"]').click
+
+        expect(page).not_to have_content(quest_title)
+      end
+    end
+  end
 end
